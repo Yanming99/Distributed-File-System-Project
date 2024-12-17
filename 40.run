@@ -1,0 +1,33 @@
+
+cp tests/disk_images/b.img test.img
+./ds3touch test.img 0 testfile
+./ds3touch test.img 0 anotherfile
+./ds3mkdir test.img 0 emptydir
+./ds3mkdir test.img 0 nonemptydir
+./ds3ls test.img /
+./ds3touch test.img 8 something
+./ds3ls test.img /nonemptydir
+./ds3rm test.img 0 testfile
+./ds3rm test.img 0 anotherfile
+./ds3rm test.img 0 nofile
+./ds3rm test.img 0 emptydir
+./ds3rm test.img 0 nonemptydir
+./ds3rm test.img 8 something
+./ds3rm test.img 0 nonemptydir
+./ds3ls test.img /
+
+cp tests/disk_images/c.img test.img
+./ds3mkdir test.img 0 nonemptydir
+./ds3ls test.img /
+./ds3touch test.img 8 something
+./ds3ls test.img /nonemptydir
+./ds3rm test.img 0 testfile
+./ds3rm test.img 0 anotherfile
+./ds3rm test.img 0 emptydir
+./ds3rm test.img 8 something
+./ds3rm test.img 0 nonemptydir
+
+
+
+
+
